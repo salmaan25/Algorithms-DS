@@ -1,11 +1,14 @@
-int nCr(ll n, ll r)
+int ncr[110][110];
+int C(int l,int k, int md) 
 {
-    ll C[r+1];
-    memset(C, 0, sizeof(C));
-    C[0] = 1;
-    for (ll i = 1; i <= n; i++) {
-        for (ll j = min(i, r); j > 0; j--)
-            C[j] = (C[j] + C[j-1]);
+    if (k>l||l<0||k<0){
+        return 0;
     }
-    return C[r];
+    return ncr[l][k];
+}
+int solve(int l1, int p1) {
+	if(l1==0 && p1==0) return 1;
+	if(p1==0) return 0;
+	if(l1<p1) return 0;
+	return ncr[l1-1][p1-1];
 }
