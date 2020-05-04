@@ -1,11 +1,11 @@
 // Length of the shortest cycle containing s (the source), here A (or ss) is the number of vertices and g is the graph.
 // VERIFY WHETHER IT CAN WORK FOR UNDIRECTED GRAPH.
 
-int shortest_cycle(int s) {
+int shortest_cycle(int s, int n) {
 	if (g[s].empty()) {
 		return inf;
 	}
-	int A=ss;
+	int A=n;
 	vector<bool> seen(A, false);
 	vector<int> dist(A, inf);
 	queue<int> q;
