@@ -30,7 +30,7 @@ void precfac() {
     }
 }
 int main(void) {
-    prec();
+    precfac();
     ll ans = C(3, 2);
     return 0;
 }
