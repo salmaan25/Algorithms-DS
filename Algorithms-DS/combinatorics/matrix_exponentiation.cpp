@@ -1,5 +1,5 @@
 int MOD = 1000000007;
-const int SZ = 3;
+int SZ;
 struct matrix
 {
 	int arr[SZ][SZ];

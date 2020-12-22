@@ -1,9 +1,13 @@
+//WORKS FOR DISCONNECTED GRAPHS AS WELL
+//THIS ADJACENCY LIST CONTAINS DUPLICATES. TO REMOVE SUPLICATES USE SET
+// BUT THIS IS SUFFICIENT FOR COUNTING COMPONENTS WITH 0 INDEGREE.
+
 class tarjanscc {
 private:
-	int n, m, sz, tm; //sz->number of SCCs, n->vertex count, m->edge count, tm->time
-	vector<vi> adjlist;
+	int n, m, sz, tm; //sz->number of SCCs or number of vertices in the DAG, n->vertex count, m->edge count, tm->time
+	vector<vi> adjlist; // adjacency list of the original graph
 	vector<vi> adjlist1; //graph after reverting the direction of edges
-	vector<vi> comp; 
+	vector<vi> comp; //comp[i] stores the list of vertices in ith strongly connected component here i also means vertex i in the DAG
 	vi vis; vi fv; vi lv; //fv->first value, lv->last value
 	void dfs(int u) {
 		fv[u]=tm;
@@ -56,6 +60,7 @@ public:
 			}
 		}
 	}
+	int getSizeOfSCC() { return sz; }
 	int getcomp(vector<vi>& comp1) {
 		for(int i = 0; i < sz; i++) {
 			for(int j = 0; j < comp[i].size(); j++) {
