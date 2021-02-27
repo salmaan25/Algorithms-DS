@@ -8,7 +8,6 @@ void dj(vector<vii>& adj, vi& d, int st) {
 		ii pr = p.top(); p.pop();
 		int u = pr.ss; int c = pr.ff;
 		if(d[u] < c) continue;
-		// cout<<u<<" fr "<<c<<endl;
 		for(int i = 0; i < adj[u].size(); i++) {
 			ii v = adj[u][i];
 			if(d[u]+v.ss < d[v.ff]) {
