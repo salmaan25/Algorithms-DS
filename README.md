@@ -1,2 +1,2 @@
 # Algorithms-DS
-Codes for some useful DS and Algorithms
+Codes for frequently used DS and Algorithms
